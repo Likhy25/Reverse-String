@@ -1,0 +1,71 @@
+package com.Electricitybill;
+
+import java.util.*;
+
+public class Electricity {
+
+	public static void main(String args[]) {
+		long units;
+
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Enter number of units");
+
+			units = sc.nextLong();
+		}
+
+		double billpay = 0;
+		
+		if (units >0 && units <= 30)
+		{
+			billpay = units * 1.90;
+			System.out.println("cost of "+  units + "units" + "   " + " =" +billpay);
+		}
+
+		else if (units > 31 && units <= 75)
+		{
+			billpay = 30 * 1.90 + (units - 30) * 3.00;
+			System.out.println("cost of first 30 units = "+30 * 1.90);
+			System.out.println("cost of "+ 31 +"units"+  "  " + "to" + " " + units +"units" +  " = " +  (units - 30) * 3.00 );
+			
+		}
+		else if (units >76 && units <= 125)
+		{
+			billpay = 30 * 1.90 + 45 * 3.00 + (units - 75) * 4.50;
+			
+			System.out.println("cost of first 30 units = "+30 * 1.90);
+			System.out.println("cost of "+ 31 +"units" + "  " + "to" + " " + 75 +  "units" + " = " +  (units - 30) * 3.00 );
+			System.out.println("cost of" + 76 +"units"+ "  " + "to" + " " + +units  +  "units" +  " = " +  (units - 75) *4.50 ); 
+		}
+		else if (units>126 && units <= 225)
+		{
+			billpay = 30 * 1.90 + 45 * 3.00 + 50 * 4.50 + (units - 125) * 6.00;
+			System.out.println("cost of first 30 units = "+30 * 1.90);
+			System.out.println("cost of "+ 31 +"units"+ "  " + "to" + " " + 75 + "units" +  " = " +  (units - 30) * 3.00 );
+			System.out.println("cost of" + 76 +"units" + "  " + "to" + " " +125   + "units" +  " = " +  (units - 75) *4.50 ); 
+			System.out.println("cost of " +126 +"units"+ "  " + "to" + " " + units  + "units" + "=" +  (units - 125) *6.00);
+		}
+		else if (units>226 && units<= 400)
+		{
+			billpay = 30 * 1.90 + 45 * 3.00 + 50 * 4.50 + 100 * 6 + (units - 225) * 8.75;
+			System.out.println("cost of first 30 units = "+30 * 1.90);
+			System.out.println("cost of "+ 31 +"units"+ "  " + "to" + " " + 75  + "units" +  " = " +  (units - 30) * 3.00 );
+			System.out.println("cost of " + 76 +"units" + "  " + "to" + " "+ 125 + "units" +  " = " +  (units - 75) *4.50 ); 
+			System.out.println("cost of " +126 +"units"+ "  " + "to" + " " + 225  + "units" + "="  +  (units - 125) *6.00);
+			System.out.println("cost of " +226 +"units"+ "  " + "to" + " " + units  + "units" + "="  +  (units - 225) *8.75);
+			
+		}
+		else if (units >401) 
+		{
+			billpay = 30 * 1.90 + 45 * 3.00 + 50 * 4.50 + 100 * 6 + 400 * 8.75 + (units - 400) * 9.75;
+			System.out.println("cost of first 30 units = "+30 * 1.90);
+			System.out.println("cost of "+ 31 +"units"+ "  " + "to" + " " + 75  + "units" +  " = " +  (units - 30) * 3.00 );
+			System.out.println("cost of " + 76 +"units"+ "  " + "to" + " "+ 125  +  "units" + " = " +  (units - 75) *4.50 ); 
+			System.out.println("cost of " +126 +"units"+ "  " + "to" + " " + 225  + "units" + "="  +  (units - 125) *6.00);
+			System.out.println("cost of " +226 +"units"+ "  " + "to" + " " + 400  + "units" +  "="  + (units - 225) *8.75);
+			System.out.println("cost of " +401 +"units"+ "  " + "to" + " " + units  +  "units" + "="  +  (units - 400) *9.75);
+		}
+		
+		System.out.print("Bill to pay = " + billpay);
+		
+	}
+}

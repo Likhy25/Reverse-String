@@ -1,0 +1,9 @@
+public class Test 
+{ 
+   public static void main(String[] args) 
+   { 
+      String a = "Hello$#we^%^&are same3#$%."; 
+      a = a.replaceAll("[^a-zA-Z0-9]", " "); 
+      System.out.println(a);
+   } 
+} 
